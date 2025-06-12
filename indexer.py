@@ -1,46 +1,41 @@
-import os
-import re
 from collections import defaultdict
+import re 
+#fonction pour nettoyer et tokenizer un texte
+def preprocess(text):
+    text = text.lower()
+    tokens = re.findall(r'\b\w+\b',text)#mots uniquement
+    return tokens
 
-class indexer:
-    def __init__ (self):
-        self.inverted_index = defaultdict(list)#mot -> liste dec(doc_id,[positions])
-        self.term_frequencies = defaultdict(dict)#doc_id -> {mot:fréquence}
-        
-    def preprocess(self,text):
-        #minuscule, suppression ponctuation, tokenisation simple 
-        text = text.lower
-        text = re.sub(r'[^\w\s]','',text)#supprimer la ponctuation
-        return text.split()
+#fonction pour parcourir les documents prétraités et construire l'index
+def construire_index_inverse(docs):
+    index_inverse = defaultdict(list)
+    for doc_id, text in docs.items():
+        tokens = preprocess(text)
+        for position, mot in enumerate(tokens):
+            index_inverse[mot].append((doc_id, position))
+    return dict(index_inverse)
+
+#calcul de la fréquence des termes(TF) pour chaque mot dans chaque document
+def calculer_tf(docs):
+    tf = defaultdict(lambda:defaultdict(int))
+    for doc_id, text in docs.items():
+        tokens = preprocess(text)
+        for mot in tokens:
+            tf[doc_id][mot] += 1
+    return dict(tf)
+
+#Auto-apprentissage
+def main():
+    index = construire_index_inverse(documents)
+    tf = calculer_tf(documents)
     
-    def index_document (self,doc_id,text):
-        tokens = self.preprocess(text)
-        position_map = default(list)
-        tf_map = default(int)
+    print("===Index Inversé===")
+    for mot, occurrences in index.items():
+        print(f"{mot}:{occurrences}")
         
-        for pos, word in enumerate (tokens):
-            position_map[word].append(pos)
-            tf_map[word] += 1
-        #mise à jour de l'index inversé
-        for word, positions in position_map.items():
-            self.inverted_index[word].append((doc_id,positions))
-            
-        #stockage de la fréquence des termes (TF)
-        self.term_frequencies [doc_id] = dict(tf_map)
-    
-    def index_corpus(self,folder_path):
-        for filename in os.listdir(folder_path):
-            if filename.endswith(".txt"):
-                doc_id = filename
-                path = os.path.join(folder_path,filename)
-                with open(path, 'r',encording ='utf-8') as f:
-                    content = f.read()
-                    self.index_document(doc_id, content)
-                    
-    def get_inverted_index(self):
-        return dict(self.inverted_index)
-    
-    def get_term_frequencies(self):
-        return dict(self.term_frequencies)
+    print("\n=== Fréquences des Termes (TF) ===")
+    for doc_id, freqs in tf.items():
+        print(f"{doc_id}:{dict(freqs)}")
         
-   
+if__name__ =="_main_":
+    main()
