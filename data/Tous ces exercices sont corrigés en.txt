@@ -1,0 +1,132 @@
+Tous ces exercices sont corrigés en fin de volume.
+1) Soit les déclarations suivantes :
+int n = 10 , p = 4 ;
+long q = 2 ;
+float x = 1.75 ;
+Donner le type et la valeur de chacune des expressions suivantes :
+a) n + q
+b) n + x
+c) n % p +q
+d) n < p
+e) n >= p
+f) n > q
+g) q + 3 * (n > p)
+h) q && n
+i) (q-2) && (n-10)
+j) x * (q==2)
+k) x *(q=5)
+2) Écrire plus simplement l’instruction suivante :
+z = (a>b ? a : b) + (a <= b ? a : b) ;
+3) n étant de type int, écrire une expression qui prend la valeur :
+-1 si n est négatif,
+0 si n est nul,
+1 si n est positif.
+4) Quels résultats fournit le programme suivant ?
+#include <stdio.h>
+main()
+{
+int n=10, p=5, q=10, r ;
+r = n == (p = q) ;
+printf ("A : n = %d p = %d q = %d r = %d\n", n, p, q, r) ;
+n = p = q = 5 ;
+n += p += q ;
+printf ("B : n = %d p = %d q = %d\n", n, p, q) ;
+q = n < p ? n++ : p++ ;
+printf ("C : n = %d p = %d q = %d\n", n, p, q) ;
+q = n > p ? n++ : p++ ;
+printf ("D : n = %d p = %d q = %d\n", n, p, q) ;
+
+
+
+
+Exercices Chapitre 4
+Tous ces exercices sont corrigés en fin de volume.
+1) Quels seront les résultats fournis par ce programme ?
+#include <stdio.h>
+main ()
+{ int n = 543 ;
+int p = 5 ;
+float x = 34.5678;
+printf ("A : %d %f\n", n, x) ;
+printf ("B : %4d %10f\n", n, x) ;
+printf ("C : %2d %3f\n", n, x) ;
+printf ("D : %10.3f %10.3e\n", x, x) ;
+printf ("E : %*d\n", p, n) ;
+printf ("F : %*.*f\n", 12, 5, x) ;
+}
+2) Quelles seront les valeurs lues dans les variables n et p (de type int), par l’instruction
+suivante ?
+scanf ("%4d %2d", &n, &p) ;
+lorsqu’on lui fournit les données suivantes (le symbole ^ représente un espace et le symbole @
+représente une fin de ligne, c’est-à-dire une validation) ?
+a) 12^45@
+b) 123456@
+c) 123456^7@
+d) 1^458@
+e) ^^^4567^^8912@
+}
+
+
+
+Exercices Chapitre 5
+Tous ces exercices sont corrigés en fin de volume.
+1) Soit le petit programme suivant :
+#include <stdio.h>
+main()
+{
+int i, n, som ;
+som = 0 ;
+for (i=0 ; i<4 ; i++)
+{ printf ("donnez un entier ") ;
+scanf ("%d", &n) ;
+som += n ;
+}
+printf ("Somme : %d\n", som) ;
+}
+Écrire un programme réalisant exactement la même chose, en employant, à la place de
+l’instruction for :
+● une instruction while,
+● une instruction do... while.
+2) Calculer la moyenne de notes fournies au clavier avec un dialogue de ce type :
+note 1 : 12
+note 2 : 15.25
+note 3 : 13.5
+note 4 : 8.75
+note 5 : -1
+moyenne de ces 4 notes : 12.37
+Le nombre de notes n’est pas connu a priori et l’utilisateur peut en fournir autant qu’il le désire.
+Pour signaler qu’il a terminé, on convient qu’il fournira une note fictive négative. Celle-ci ne
+devra naturellement pas être prise en compte dans le calcul de la moyenne.
+3) Afficher un triangle rempli d’étoiles, s’étendant sur un nombre de lignes fourni en donnée et
+se présentant comme dans cet exemple :
+*
+**
+***
+****
+*****© Éditions Eyrolles 91
+chapitre n° 5 Les instructions de contrôle
+4) Déterminer si un nombre entier fourni en donnée est premier ou non.
+5) Écrire un programme qui détermine la n-ième valeur un (n étant fourni en donnée) de la
+« suite de Fibonacci » définie comme suit :
+u
+1 = 1
+u
+2 = 1
+u
+n = un-1 + un-2 pour n>2
+6) Écrire un programme qui affiche la table de multiplication des nombres de 1 à 10, sous la
+forme suivante :
+I 1 2 3 4 5 6 7 8 9 10
+-----------------------------------------------
+1 I 1 2 3 4 5 6 7 8 9 10
+2 I 2 4 6 8 10 12 14 16 18 20
+3 I 3 6 9 12 15 18 21 24 27 30
+4 I 4 8 12 16 20 24 28 32 36 40
+5 I 5 10 15 20 25 30 35 40 45 50
+6 I 6 12 18 24 30 36 42 48 54 60
+7 I 7 14 21 28 35 42 49 56 63 70
+8 I 8 16 24 32 40 48 56 64 72 80
+9 I 9 18 27 36 45 54 63 72 81 90
+10 I 10 20 30 40 50 60 70 80 90 100
+
+
