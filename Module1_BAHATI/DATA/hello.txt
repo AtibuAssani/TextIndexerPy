@@ -1,0 +1,2 @@
+Bonjour le monde. Ceci est un test simple.
+Le traitement du texte est important.
