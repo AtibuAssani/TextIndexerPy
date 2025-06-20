@@ -1,6 +1,6 @@
 # Module 2 : Construction de l'Index Inversé
 
-## 📄 Description
+##  Description
 Ce module construit l’index inversé à partir des textes prétraités :
 - Associe chaque mot à une liste de documents et de positions où il apparaît.
 - Calcule la fréquence de chaque mot dans chaque document (TF).
