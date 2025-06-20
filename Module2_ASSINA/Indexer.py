@@ -63,7 +63,7 @@ def transpose_term_frequencies(tf):
 def create_index(documents):
     global current_inverted_index, current_term_frequencies
 
-    print("📦 Construction de l'index en cours...")
+    print("Construction de l'index en cours...")
     current_inverted_index = build_inverted_index(list(documents.values()))
     current_term_frequencies = compute_term_frequencies(current_inverted_index)
 
@@ -71,17 +71,17 @@ def create_index(documents):
     current_term_frequencies = transpose_term_frequencies(current_term_frequencies)
 
     if not current_inverted_index:
-        print("⚠️ Aucun mot trouvé. Tous les documents sont peut-être vides.")
+        print(" Aucun mot trouvé. Tous les documents sont peut-être vides.")
     else:
-        print("🔍 Index inversé :")
+        print(" Index inversé :")
         for mot, postings in current_inverted_index.items():
             print(f"{mot}: {postings}")
 
-        print("\n📊 Fréquences des termes :")
+        print("\n Fréquences des termes :")
         for mot, freqs in compute_term_frequencies(current_inverted_index).items():
             print(f"{mot}: {freqs}")
 
-        print(f"\n✅ Index créé avec {len(current_inverted_index)} mots différents.")
+        print(f"\n Index créé avec {len(current_inverted_index)} mots différents.")
 
     doc_names = list(documents.keys())
     return current_inverted_index, current_term_frequencies, doc_names
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     }
 
     index = build_inverted_index(list(test_docs.values()))
-    print("\n🔍 Index inversé :")
+    print("\n Index inversé :")
     for mot, data in index.items():
         print(f"{mot}: {data}")
 
