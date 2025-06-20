@@ -1,0 +1,2 @@
+Python est un langage de programmation puissant.
+Les index inversés facilitent la recherche de mots.
