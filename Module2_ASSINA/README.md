@@ -10,7 +10,7 @@ Ce module construit l’index inversé à partir des textes prétraités :
 - Parcours de structures
 - Calculs de fréquence
 
-## 📂 Fichier principal
+##  Fichier principal
 - `indexer.py`
 
 ## ⚙️ Fonctions principales
