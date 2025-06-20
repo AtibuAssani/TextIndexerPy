@@ -1,0 +1,36 @@
+# Ignorer les dossiers de cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignorer les fichiers temporaires
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# Ignorer les environnements virtuels
+env/
+venv/
+ENV/
+.VENV/
+
+# Ignorer les fichiers de configuration d'IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorer les fichiers générés automatiquement
+*.db
+*.sqlite3
+
+# Fichiers de sauvegarde ou temporaires
+*.~*
+*.orig
+
+# Ignorer les fichiers de tests ou data temporaires
+/data/output/
+tests/__pycache__/
