@@ -54,7 +54,7 @@ def charger_et_traiter(dossier):
 
 
 if __name__ == '__main__':
-    # 🔧 Mets ici le chemin de ton dossier contenant les fichiers texte :
+    #  Mets ici le chemin de ton dossier contenant les fichiers texte :
     dossier_documents = 'D:\Bureau\TextIndexerPy\DATA'
 
     documents = charger_et_traiter(dossier_documents)
