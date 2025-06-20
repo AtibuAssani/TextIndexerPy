@@ -8,7 +8,7 @@ def retrieve_text(docs):
     Permet à l'utilisateur de saisir un nom de fichier pour en afficher le contenu.
     :param docs: Dictionnaire {nom_fichier: liste_de_mots}
     """
-    print("📂 Extraction de texte...")
+    print(" Extraction de texte...")
     nom_fichier = input("Entrez le nom exact du fichier (ex: hello.txt) : ")
 
     if nom_fichier in docs:
