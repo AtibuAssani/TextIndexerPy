@@ -108,6 +108,6 @@ if __name__ == "__main__":
         print(f"{mot}: {data}")
 
     tf = compute_term_frequencies(index)
-    print("\n📊 Fréquences des termes :")
+    print("\n Fréquences des termes :")
     for mot, freqs in tf.items():
         print(f"{mot}: {freqs}")
