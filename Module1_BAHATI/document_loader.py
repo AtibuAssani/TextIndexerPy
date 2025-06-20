@@ -11,13 +11,13 @@ def lire_documents(dossier):
     for fichier in os.listdir(dossier):
         if fichier.endswith(".txt"):
             chemin_complet = os.path.join(dossier, fichier)
-            print(f"📄 Chargement du fichier : {fichier}")  # ✅ LIGNE AJOUTÉE
+            print(f" Chargement du fichier : {fichier}")  #  LIGNE AJOUTÉE
             try:
                 with open(chemin_complet, 'r', encoding='utf-8') as f:
                     documents[fichier] = f.read()
             except Exception as e:
-                print(f"❌ Erreur de lecture de {fichier} : {e}")
-    print(f"📁 Total : {len(documents)} fichiers chargés.\n")  # ✅ FIN DE FONCTION
+                print(f" Erreur de lecture de {fichier} : {e}")
+    print(f" Total : {len(documents)} fichiers chargés.\n")  #  FIN DE FONCTION
     return documents
 
 
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     documents = charger_et_traiter(dossier_documents)
 
     for nom, tokens in documents.items():
-        print(f"📄 Fichier : {nom}")
-        print(f"🔢 Nombre de mots : {len(tokens)}")
-        print(f"📝 Premiers tokens : {tokens[:10]}")
+        print(f" Fichier : {nom}")
+        print(f" Nombre de mots : {len(tokens)}")
+        print(f" Premiers tokens : {tokens[:10]}")
         print("-" * 40)
