@@ -1,5 +1,5 @@
 from Module1_BAHATI.document_loader import charger_et_traiter as load_documents_from_folder
-from Module2_ASSINA.indexer import create_index
+from Module2_ASSINA.Indexer import create_index
 from Module3_ATIBU.search_engine import SearchEngine
 from Module4_BAMPOLE.retrieval import sort_results, retrieve_text
 from Module5_ASSUMANI.stats import show_statistics
